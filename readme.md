@@ -1,14 +1,20 @@
 ### Project4 Python Backend for Activity Tracker
 
 ##### Links
-- GitHub: https://github.com/SWIRTH9092/activitytracker_backend
-- Render: https://sw-activitytracker-bkend.onrender.com/activity/
+- GitHub: https://github.com/SWIRTH9092/activitytracker_bkend
+- Render: https://sw-activitytracker-bkend.onrender.com/
 
-##### Dependencies
-- Django
-    - dj-database-url 
-    - psycopg2-binary
-    - rest-framework
+##### Dependencies  
+
+asgiref==3.6.0
+dj-database-url==1.2.0
+Django==4.1.7
+django-cors-headers==3.14.0
+djangorestframework==3.14.0
+gunicorn==20.1.0
+psycopg2-binary==2.9.5
+pytz==2022.7.1
+sqlparse==0.4.3
 - Postgres
 
 ##### Activity Tracker Tables
@@ -29,17 +35,17 @@
 | Table |Routes | Method | EndPoints | Expected Result |
 |------|-------|--------|-----------|-----------------|
 | activity | Index | GET | /activity | Gets all entries |
-| activity | Create | POST | /activity | Creates a new entry |
-| activity | Show | GET | /activity:id | Gets 1 entry
-| activity | Update | PUT | /activity:id | Updates Existing Entry |
-| activity | Delete | DELETE | /activity:id | Removes entry from database
+| activity | Create | POST | /activity/ | Creates a new entry |
+| activity | Show | GET | /activity/:id | Gets 1 entry
+| activity | Update | PUT | /activity/:id/ | Updates Existing Entry |
+| activity | Delete | DELETE | /activity/:id/ | Removes entry from database
 | activitytracker| Index | GET | /activitytracker | Gets all entries |
-| activitytracker| Create | POST | /activitytracker | Creates a new entry |
-| activitytracker| Show | GET | /activitytracker:id | Shows all entries for an activity
-| activitytracker| Update | PUT | /activitytracker:id | Updates Existing Entry |
-| activitytracker| Delete | DELETE | /activitytracker:id | Removes entry from database
-| activitydata| Show | GET | /activitydata:id | Gets 1 entry for an activity and all of the activitytracker detail|
-
+| activitytracker| Create | POST | /activitytracker/ | Creates a new entry |
+| activitytracker| Show | GET | /activitytracker/:id | Shows all entries for an activity
+| activitytracker| Update | PUT | /activitytracker/:id/ | Updates Existing Entry |
+| activitytracker| Delete | DELETE | /activitytracker/:id/ | Removes entry from database
+| activitydata| Index | GET | /activitydata | Gets all activities with matching activitytracker detail |
+| activitydata| Show | GET | /activitydata/:id | Gets 1 entry for an activity and all of the activitytracker detail |
 ##### SQL to define tables to Postgres
 
 - SQL to create activity table (parent)
